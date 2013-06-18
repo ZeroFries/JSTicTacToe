@@ -49,17 +49,13 @@ $(function() {  // game start
 		else
 			turn = 1;
 		if (win(grid) == 3)
-			$('h2').text('Tie!');
+			$('h2').prepend('Tie!');
 		if (win(grid) == 1)
-			$('h2').text('Player 1 wins!');
+			$('h2').prepend('Player 1 wins!');
 		if (win(grid) == 2)
-			$('h2').text('Player 2 wins!');
+			$('h2').prepend('Player 2 wins!');
 		if (win(grid) != 0){
-			var refresh = document.createElement('a');
-			refresh.href = 'javascript:location.reload(true)';
-			var refreshText = document.createTextNode('Play again?');
-			refresh.appendChild(refreshText);
-			document.body.childNodes[2].appendChild(refresh);
+			$('#refresh').show();
 			$('div').unbind('click');
 		}
 	});
