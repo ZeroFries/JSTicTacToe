@@ -1,0 +1,67 @@
+body{
+		background: linear-gradient(to bottom right, #a1e048, #6a942f);
+}
+h1{
+		text-align: center;
+		margin-bottom: 80px;
+		font-family: 'Fauna One', serif;
+}
+
+h2{
+		text-align: center;
+		position: absolute;
+		top: 82px;
+		left: 43%;
+		font-family: 'Fauna One', serif;
+		color: red;
+}
+
+.row{
+		height: 100px;
+		width: 312px;
+		border-bottom: 2px solid black;
+		margin: auto;
+}
+
+.row:last-child{
+		border: none;
+}
+
+.blank{
+		display: inline-block;
+		height: 100px;
+		width: 100px;
+		border-right: 2px solid black;
+}
+
+.blank:last-child{
+		border: none;
+}
+
+.X{
+		display: inline-block;
+		height: 100px;
+		width: 100px;
+		border-right: 2px solid black;
+		background-image: url('X.png');
+		background-size: 95px 95px;
+		background-repeat: no-repeat;
+}
+
+.X:last-child{
+		border: none;
+}
+
+.O{
+		display: inline-block;
+		height: 100px;
+		width: 100px;
+		border-right: 2px solid black;
+		background-image: url('O.png');
+		background-size: 95px 95px;
+		background-repeat: no-repeat;
+}
+
+.O:last-child{
+		border: none;
+}
