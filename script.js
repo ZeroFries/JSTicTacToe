@@ -1,32 +1,25 @@
 // takes the game grid and returns player number of winner, 3 if tie, and 0 if no winner
 function win(grid, playerNum){
-	counterRow = 1;
-	counterCol = 1;
-	counterDiagF = 1;
-	counterDiagB = 1;
-	counterTie = 0;
+	var counterRow = 1, counterCol = 1, counterDiagF = 1, counterDiagB = 1, counterTie = 0;
 
   for (var i=0; i<3; i++){
-  	// tally for diag wins
-  	counterDiagF *= grid[i][i]
+  	counterDiagF *= grid[i][i] // tally for diag wins
   	counterDiagB *= grid[i][2-i]
-  	// tally for row or col wins
   	for (var j=0; j<3; j++){
-  		counterRow *= grid[i][j]
+  		counterRow *= grid[i][j] // tally for row or col wins
   		counterCol *= grid[j][i]
-  		counterTie += grid[i][j]
+  		counterTie += grid[i][j] // tally for ties
   	}
-  	// check for row or col wins
   	var score = Math.pow(playerNum, 3);
-  	if (counterRow == score || counterCol == score)
+  	if (counterRow == score || counterCol == score) // check for row or col wins
   		return playerNum;
   	counterRow = 1;
   	counterCol = 1;
   }
-  // check for diag wins
-  if (counterDiagF == score || counterDiagB == score)
+
+  if (counterDiagF == score || counterDiagB == score) // check for diag wins
   	return playerNum;
-  if (counterTie == 13)
+  if (counterTie == 13) // check for tie
   	return 3;
   return 0;
 }
